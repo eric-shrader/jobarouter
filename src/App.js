@@ -17,6 +17,7 @@ import Careers, { careersLoader } from './components/pages/Careers'
 import RootLayout from './components/layouts/RootLayout'
 import HelpLayout from './components/layouts/HelpLayout'
 import CareersLayout from './components/layouts/CareersLayout'
+import CareerDetails, { careerDetailsLoader } from './components/pages/CareerDetails'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
 
       <Route path="careers" element={<CareersLayout />}>
         <Route index element={<Careers />} loader={careersLoader} />
+        <Route path=":id" element={<CareerDetails />} loader={careerDetailsLoader} />
       </Route>
 
       {/* route for when URL doesnt match a page */}

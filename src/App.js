@@ -8,7 +8,7 @@ import {
 //pages
 import Home from './components/pages/Home'
 import About from './components/pages/About'
-import Contact from './components/pages/help/Contact'
+import Contact, { contactAction } from './components/pages/help/Contact'
 import Faq from './components/pages/help/Faq'
 import NotFound from './components/pages/NotFound'
 import Careers, { careersLoader } from './components/pages/careers/Careers'
@@ -27,9 +27,10 @@ const router = createBrowserRouter(
     <Route path="/" element={<RootLayout />}>
       <Route path="/" element={<Home />} />
       <Route path="about" element={<About />} />
+
       <Route path="help" element={<HelpLayout />}>
         <Route path="faq" element={<Faq />} />
-        <Route path="contact" element={<Contact />} />
+        <Route path="contact" element={<Contact />} action={contactAction} />
       </Route>
 
       <Route
